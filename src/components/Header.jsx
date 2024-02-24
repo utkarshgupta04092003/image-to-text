@@ -1,28 +1,3 @@
-// import React from 'react'
-
-// export default function Header() {
-//   return (
-//     <nav className="flex justify-between items-center bg-white shadow-md p-4">
-//     <div className="flex items-center">
-//       <svg className="w-6 h-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-//         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-//       </svg>
-//       <span className="text-black font-semibold">Image to Text Convertor</span>
-//     </div>
-//     <div className="flex items-center space-x-4">
-//       <span className="text-black font-semibold cursor-pointer">Home</span>
-//       <span className="text-black font-semibold cursor-pointer">Features</span>
-//       <span className="text-black font-semibold cursor-pointer">Pricing</span>
-//       <span className="text-black font-semibold cursor-pointer">Pricing</span>
-//       <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">Sign Up</button>
-//       <button className="bg-gray-300 hover:bg-gray-400 text-black font-semibold py-2 px-4 rounded">Login</button>
-//     </div>
-//   </nav>
-
-//   )
-// }
-
-
 import React, { useState } from 'react';
 
 const Header = () => {
@@ -48,7 +23,7 @@ const Header = () => {
                     >
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
                     </svg>
-                    <span className="text-black font-semibold">Image to Text Converter</span>
+                    <span className="text-black font-bold text-2xl">Text2Script</span>
                 </div>
                 <div className="hidden md:flex items-center space-x-4">
                     <span className="text-black font-semibold cursor-pointer">Home</span>
