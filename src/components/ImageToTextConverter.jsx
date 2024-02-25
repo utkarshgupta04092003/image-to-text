@@ -49,7 +49,10 @@ function ImageToTextConverter() {
           setExtractedText([{ text: data.error }])
           return;
         }
-        setExtractedText(data); 
+        if(data.length == 0)
+          setExtractedText([{ text: "No text found..." }])
+        else
+         setExtractedText(data);
       })
       .catch(error => {
         setExtractedText([{ text: error }])
@@ -57,29 +60,29 @@ function ImageToTextConverter() {
         console.error('Error:', error);
 
       });
-    }
+  }
 
-      const handleCopy = async () => {
-      // Check if the Clipboard API is supported by the browser
-      if (navigator.clipboard) {
-        
-        const text = document.getElementById('copy-text').innerText;
-        console.log(text)
-        await navigator.clipboard.writeText(text)
-          .then(() => {
-            console.log('Text copied to clipboard:',text);
-            alert('Text copied to clipboard!');
-          })
-          .catch((error) => {
-            console.error('Error copying text to clipboard:', error);
-            alert('Error copying text to clipboard!');
-          });
-      } else {
-        console.warn('Clipboard API not supported');
-        alert('Clipboard API not supported!');
-      }
+  const handleCopy = async () => {
+    // Check if the Clipboard API is supported by the browser
+    if (navigator.clipboard) {
+
+      const text = document.getElementById('copy-text').innerText;
+      console.log(text)
+      await navigator.clipboard.writeText(text)
+        .then(() => {
+          console.log('Text copied to clipboard:', text);
+          alert('Text copied to clipboard!');
+        })
+        .catch((error) => {
+          console.error('Error copying text to clipboard:', error);
+          alert('Error copying text to clipboard!');
+        });
+    } else {
+      console.warn('Clipboard API not supported');
+      alert('Clipboard API not supported!');
     }
-  
+  }
+
 
   return (
     <div className="flex md:flex-row flex-col my-8 mx-16 justify-between">
@@ -128,7 +131,8 @@ function ImageToTextConverter() {
                 Copy
               </button>
             </div>
-            <p className="text-black" id="copy-text">{extractedText.map((text, index) => (text.text + " "))}</p>
+              <p className="text-black" id="copy-text">{extractedText.map((text, index) => (text.text + " "))}</p>
+            
           </div>
         </div>
       </div>

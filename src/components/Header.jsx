@@ -23,7 +23,7 @@ const Header = () => {
                     >
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
                     </svg>
-                    <span className="text-black font-bold text-2xl">Text2Script</span>
+                    <span className="text-black font-bold text-2xl">Image2Script</span>
                 </div>
                 <div className="hidden md:flex items-center space-x-4">
                     <span className="text-black font-semibold cursor-pointer">Home</span>
